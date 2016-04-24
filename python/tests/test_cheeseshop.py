@@ -1,12 +1,9 @@
 """
-Test the module `cheeseshop`.
+Test the `cheeseshop` module.
 """
 
 import pytest
 import numpy as np
-import os
-print(os.getcwd())
-print(os.listdir())
 import cheeseshop
 
 def test_basicanswer():
