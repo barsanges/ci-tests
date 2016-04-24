@@ -3,6 +3,7 @@ python: "3.5"
 # Command to run tests:
 script:
   - cd python
+  - pip install -e .
   - python tests/foo.py
   - py.test .
   - py.test cheeseshop --doctest-modules
