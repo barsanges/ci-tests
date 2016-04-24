@@ -4,6 +4,9 @@ Test the module `cheeseshop`.
 
 import pytest
 import numpy as np
+import os
+print(os.getcwd())
+print(os.listdir())
 import cheeseshop
 
 def test_basicanswer():
