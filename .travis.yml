@@ -4,6 +4,5 @@ python: "3.5"
 script:
   - cd python
   - pip install -e .
-  - python tests/foo.py
-  - py.test .
+  - py.test
   - py.test cheeseshop --doctest-modules
