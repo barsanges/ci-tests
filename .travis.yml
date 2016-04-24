@@ -1,0 +1,6 @@
+language: python
+python: "3.5"
+# Command to run tests:
+script:
+  - cd python && py.test
+  - cd python && py.test cheeseshop --doctest-modules
