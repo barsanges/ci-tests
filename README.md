@@ -1,2 +1,3 @@
 # ci-tests
-Test CI tools on GitHub
+
+Test continuous integration (CI) tools on GitHub.
