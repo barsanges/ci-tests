@@ -6,3 +6,4 @@ script:
   - pip install -e .
   - py.test
   - py.test cheeseshop --doctest-modules
+  - ./run_pylint.sh cheeseshop 8.0

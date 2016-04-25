@@ -1,3 +1,4 @@
+# pylint: disable=W0614,W0401,W0611
 """
 Mock functions and objects used to test CI tools on GitHub, based on
 Monthy Python's "Cheese shop".
