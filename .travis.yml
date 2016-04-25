@@ -1,5 +1,10 @@
 language: python
 python: "3.5"
+# Tools to install:
+addons:
+  apt:
+    packages:
+    - bc
 # Command to run tests:
 script:
   - cd python
