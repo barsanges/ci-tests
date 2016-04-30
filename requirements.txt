@@ -1,4 +1,3 @@
 # Requirements without version specifiers:
 pylint
-numpy
 pandas
