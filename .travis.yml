@@ -26,7 +26,9 @@ before_install:
 
 # Install packages
 install:
-  - conda install --yes python=$TRAVIS_PYTHON_VERSION pylint numpy=$NUMPY_VERSION pandas
+  - conda create --yes -n env_name python=$TRAVIS_PYTHON_VERSION pip numpy=$NUMPY_VERSION pandas pylint
+  - source activate env_name
+  - pip install pytest  # not yet available for py3 in anaconda
 
 # Command to run tests:
 script:
