@@ -15,7 +15,7 @@ addons:
     - bc
 
 install:
-  - pip install numpy=$NUMPY_VERSION
+  - pip install numpy==$NUMPY_VERSION
 
 # Command to run tests:
 script:
