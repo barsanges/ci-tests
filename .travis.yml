@@ -18,8 +18,9 @@ addons:
 before_install:
   - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
   - chmod +x miniconda.sh
-  - ./miniconda.sh -b
-  - export PATH=/home/travis/anaconda/bin:$PATH
+  - CONDADIR=$HOME/miniconda2
+  - ./miniconda.sh -b -p $CONDADIR
+  - export PATH=$CONDADIR/bin:$PATH
   # Update conda itself
   - conda update --yes conda
 
