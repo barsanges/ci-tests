@@ -36,6 +36,7 @@ script:
   - pip install -e .
   - py.test
   - py.test cheeseshop --doctest-modules
+  - codecov
   - bash run_pylint.sh cheeseshop 8.0
 
 after_success:
