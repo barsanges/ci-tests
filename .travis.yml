@@ -28,7 +28,7 @@ before_install:
 install:
   - conda create --yes -n env_name python=$TRAVIS_PYTHON_VERSION pip numpy=$NUMPY_VERSION pandas pylint
   - source activate env_name
-  - pip install pytest  # not yet available for py3 in anaconda
+  - pip install pytest  pytest-cov codecov
 
 # Command to run tests:
 script:
@@ -37,3 +37,6 @@ script:
   - py.test
   - py.test cheeseshop --doctest-modules
   - bash run_pylint.sh cheeseshop 8.0
+
+after_success:
+  - codecov
