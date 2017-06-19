@@ -34,8 +34,7 @@ install:
 script:
   - cd python
   - pip install -e .
-  - py.test --cov=cheeseshop
-  - py.test cheeseshop --doctest-modules
+  - py.test cheeseshop tests --doctest-modules --cov=cheeseshop
   - bash run_pylint.sh cheeseshop 8.0
 
 after_success:
