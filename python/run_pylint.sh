@@ -10,15 +10,10 @@ fi
 module=$1
 threshold=$2
 regex='[0-9]+[\.]?[0-9]*'
-# Temporary file used to store pylint results:
-output='pylint_results'
-pylint $module | tee $output
 # Searching pylint results for the score:
-res=$(grep -oE "^Your code has been rated at "$regex $output | grep -oE $regex)
-# Removing temporary output file:
-rm $output
+res=$(pylint $module | tee /dev/tty | grep -oE "^Your code has been rated at "$regex $output | grep -oE $regex)
 # Test if the score is below or above the threshold:
-accepted=$(bc <<< "$res >= $threshold")
+accepted=$(python -c "print(1 if $res > $threshold else 0)")
 if [ $accepted = 1 ]; then
     echo "Accepted: pylint score $res above $threshold"
     exit 0 # OK

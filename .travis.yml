@@ -8,12 +8,6 @@ env:
   - NUMPY_VERSION=1.9
   - NUMPY_VERSION=1.11.0
 
-# Tools to install:
-addons:
-  apt:
-    packages:
-    - bc
-
 # Setup anaconda
 before_install:
   - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
@@ -28,7 +22,7 @@ before_install:
 install:
   - conda create --yes -n env_name python=$TRAVIS_PYTHON_VERSION pip numpy=$NUMPY_VERSION pandas pylint
   - source activate env_name
-  - pip install pytest  pytest-cov codecov
+  - pip install pytest pytest-cov codecov
 
 # Command to run tests:
 script:
@@ -37,5 +31,9 @@ script:
   - py.test cheeseshop tests --doctest-modules --cov=cheeseshop
   - bash run_pylint.sh cheeseshop 8.0
 
+# One could save pylint results and send them to a server to concatenate the
+# data and draw ad hoc graphs (for coverage as well instead of using Codecov),
+# see for example https://github.com/drivet/pylint-server and
+# http://www.desmondrivet.com/blog/technical/pylint-badges.html for badges.
 after_success:
   - codecov
