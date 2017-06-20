@@ -1,9 +1,0 @@
-engines:
- pylint:
-   enabled: true
- bandit:
-   enabled: false
- prospector:
-   enabled: false
- shellcheck:
-   enabled: false
